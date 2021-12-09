@@ -1,0 +1,5 @@
+bg: #141414
+primary: #06D6A0
+secondary: #EF476F
+text-primary: #F5DEB3
+other-color: #FFD166
