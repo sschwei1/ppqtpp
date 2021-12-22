@@ -9,7 +9,7 @@
                 name='{{$id}}'
                 type='{{$type}}'
                 placeholder='{{$placeholder}}'
-                value='{{$value}}'
+                value='{{ old($id, $value) }}'
             />
         @endif
         <br />
