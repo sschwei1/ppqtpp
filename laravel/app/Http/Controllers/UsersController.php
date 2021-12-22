@@ -9,11 +9,6 @@ use Illuminate\Contracts\Foundation\Application;
 
 class UsersController extends Controller
 {
-    public function index() : View|Application|Factory
-    {
-        return view('userPage');
-    }
-
     public function login(Request $request)
     {
         $request->validate([
