@@ -1,13 +1,16 @@
 <div>
     @if(isset($title))
-        <div>{{ $title }}</div>
-        <br />
     @endif
     <form action='{{ route($action) }}' method='{{ $method }}'>
+
+        <div class="spacer"></div>
+        <div class="form-group">
+
         @csrf
         {{$slot}}
-        <div class='row'>
-            <button type='submit'>{{ $submit }}</button>
         </div>
+
+            <button  class="btn btn-primary" type='submit'>{{ $submit }}</button>
+
     </form>
 </div>

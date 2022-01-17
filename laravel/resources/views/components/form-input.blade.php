@@ -1,6 +1,6 @@
 @if(!$hidden)
-    <div class='row'>
-        <label for='{{$id}}'>{{$title}}</label>
+
+        <label  class='{{$labelClass}}' for='{{$id}}'>{{$title}}</label>
         @if($slot->isNotEmpty())
             {{ $slot }}
         @else
@@ -9,13 +9,14 @@
                 name='{{$id}}'
                 type='{{$type}}'
                 placeholder='{{$placeholder}}'
-                value='{{ old($id, $value) }}'
+                value='{{$value}}'
+                class='{{$class}}'
+
             />
         @endif
         <br />
         <span style='color:red'>@error($id){{$message}}@enderror</span>
         <br />
-    </div>
 @else
-    <input id='{{$id}}' name='{{$id}}' type='hidden' value='{{$value}}'  />
+    <input type='hidden' name='{{$id}}' id='{{$id}}'  value='{{$value}}' placeholder="{{$placeholder}}">
 @endif

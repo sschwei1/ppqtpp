@@ -5,8 +5,8 @@
 
     <x-form title='Ask your question' action='ask.question' submit='Ask' method='post' >
         <x-form-input id='presentationId' value='{{$id}}' hidden />
-        <x-form-input id='nickname' title='Nickname' />
-        <x-form-input id='question' title='Question' />
+        <x-form-input id='username' title='Username' class='form-control' labelClass='textLabelSmaller'/>
+        <x-form-input id='question' title='Question' class='form-control' labelClass='textLabelSmaller' />
     </x-form>
 </x-page>
 

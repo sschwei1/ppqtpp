@@ -26,6 +26,34 @@ Route::view('/login', 'users.login')
 Route::post('/users/login', [UsersController::class, 'login'])
     ->name('user.login');
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Overview Routes
+|--------------------------------------------------------------------------
+*/
+// overview of all presentations
+Route::view('/presOverview', 'overview.presentationOverview')
+    ->name('view.overview.presentationOverview');
+
+//overview of all sessions of a presentation
+Route::view('/sessionOverview', 'overview.sessionOverview')
+    ->name('view.overview.sessionOverview');
+
+//show the question of a session
+Route::view('/sessionInfo', 'overview.sessionInfo')
+    ->name('view.overview.sessionInfo');
+
+//used to add a new presentation
+Route::view('/newPresentation', 'overview.addNewPresentation')
+    ->name('view.overview.addNewPresentation');
+
+//used while a presentation is running
+Route::view('/runningPresentation', 'overview.runningPres')
+    ->name('view.overview.runningPres');
+
+
 /*
 |--------------------------------------------------------------------------
 | Ask Routes
@@ -46,3 +74,4 @@ Route::get('/ask/{id}', [AskController::class, 'load'])
 // handles asked question
 Route::post('/ask/question', [AskController::class, 'question'])
     ->name('ask.question');
+

@@ -1,0 +1,159 @@
+:root {
+    --text: #ffffff;
+    --primary: #06d6a0;
+    --primaryHover: #60fbd2;
+    --placeholder: #b5b5b5;
+    --lightGray: #585a61;
+    --darkGray: #413e47;
+}
+
+body {
+    background-color: var(--darkGray);
+    color: var(--text);
+}
+
+nav {
+
+    background-color: var(--lightGray);
+    color: var(--text);
+}
+
+/* Primary Button */
+
+.btn-primary {
+
+    background-color: var(--primary);
+    color: var(--darkGray);
+    border-color: var(--lightGray);
+    width: 15%;
+    min-width: 90px;
+    margin: auto auto auto 42.5%;
+
+}
+
+.btn-primary:hover {
+
+    background-color: var(--primaryHover);
+    color: var(--darkGray);
+    border-color: var(--lightGray);
+}
+
+
+button#submit:active {
+
+    background-color: var(--primary);
+    color: var(--darkGray);
+    border-color: var(--lightGray);
+    box-shadow: 0 0 0 0.2rem rgba(13, 225, 143, 0.25);
+}
+
+button#submit:focus {
+
+    background-color: var(--primary);
+    color: var(--darkGray);
+    border-color: var(--lightGray);
+    box-shadow: 0 0 0 0.2rem rgba(13, 225, 143, 0.25);
+}
+
+/* Form Control - Input */
+
+
+.textLabel {
+
+
+    width: 20%;
+    margin-left: 42.5%;
+    margin-top: 2%;
+    font-size: 35px;
+    font-weight: bold;
+
+}
+
+.textLabelSmaller {
+
+    width: 20%;
+    margin-left: 25%;
+    margin-top: 2%;
+    font-size: 30px
+}
+
+.form-control {
+    color: var(--text);
+    background-color: var(--lightGray);
+    border-color: var(--primary);
+    width: 50%;
+    min-width: 200px;
+    margin: auto;
+}
+
+.form-control::placeholder {
+    color: var(--placeholder);
+}
+
+.form-control:focus {
+    color: var(--text);
+    background-color: var(--lightGray);
+    border-color: var(--primaryHover);
+    box-shadow: 0 0 0 0.2rem rgba(13, 225, 143, 0.25);
+}
+
+.navicon {
+
+    color: var(--primary);
+
+}
+
+.alert {
+
+    color: black;
+    background-color: rgba(6, 214, 160, 50%);
+    border-color: rgba(96, 251, 210, 50%);
+    width: 50%;
+    margin: 2% auto auto;
+}
+
+.spacer {
+
+    margin-top: 7%;
+}
+
+
+/* other stuff */
+
+hr {
+
+    background-color: var(--placeholder);
+}
+
+h2 {
+
+    color: var(--text);
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: xx-large;
+    display: inline;
+    float: left;
+}
+
+.menuButton {
+
+    float: right;
+    margin-right: 20px;
+}
+
+p {
+
+    margin-left: 25px;
+    color: var(--placeholder);
+}
+
+h5{
+    float: right;
+    margin-right: 20px
+}
+
+.primaryColorText{
+
+    color: var(--primary);
+    margin-left: 25px;
+}

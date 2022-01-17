@@ -14,13 +14,15 @@ class FormInput extends Component
     public $type;
     public $hidden;
     public $value;
+    public $class;
+    public $labelClass;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($id, $title = '', $placeholder = null, $type = 'text', $hidden = false, $value = '')
+    public function __construct($id, $title = '', $placeholder = null, $type = 'text', $hidden = false, $value = '', $class = '', $labelClass = '')
     {
         $this->id = $id;
         $this->title = $title;
@@ -28,6 +30,8 @@ class FormInput extends Component
         $this->type = $type;
         $this->hidden = $hidden;
         $this->value = $value;
+        $this->class = $class;
+        $this->labelClass = $labelClass;
     }
 
     /**
