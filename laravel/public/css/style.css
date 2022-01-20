@@ -127,7 +127,7 @@ hr {
 
 h2 {
 
-    color: var(--text);
+    color: var(--primary);
     margin-left: 20px;
     margin-top: 10px;
     font-size: xx-large;
@@ -144,7 +144,7 @@ h2 {
 p {
 
     margin-left: 25px;
-    color: var(--placeholder);
+    color: #d7d7d7;
 }
 
 h5{
@@ -156,4 +156,18 @@ h5{
 
     color: var(--primary);
     margin-left: 25px;
+}
+
+.cols{
+    width: 50%;
+}
+
+.fullWidthCol{
+
+    width: 100%;
+}
+
+.grayText{
+
+    color: var(--placeholder);
 }

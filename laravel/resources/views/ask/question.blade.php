@@ -1,7 +1,6 @@
 <x-page>
-    <div>
-        Current presentation Id: {{ $id }}
-    </div>
+
+    <x-header></x-header>
 
     <x-form title='Ask your question' action='ask.question' submit='Ask' method='post' >
         <x-form-input id='presentationId' value='{{$id}}' hidden />

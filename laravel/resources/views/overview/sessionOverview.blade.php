@@ -1,56 +1,34 @@
 <x-page>
     <x-header/>
 
-
-    <div class="row">
+    <div style="margin-top: 20px" class="row">
         <divs class="cols primaryColorText">
             <h2>Presentation</h2>
         </divs>
 
-        <div class="col">
+        <div  class="col">
             <button type="button" id="add" class="btn btn-primary menuButton">add New</button>
         </div>
     </div>
 
     <div class="row">
-    <divs class="cols">
+    <divs class="cols primaryColorText">
         <p>Thema</p>
     </divs>
-    <div class="col">
+    <div class="col ">
         <p>12</p>
     </div>
     </div>
 
-    <p>Description</p>
+    <div class="row">
+        <div class="cols fullWidthCol primaryColorText">
+            <p class="grayText">this is a presentation about things</p>
+        </div>
+    </div>
 
 
     <hr>
 {{--TODO: add for each--}}
-    <div id="presComponent">
-        <a style="text-decoration: none" href="login.html">
-            <div class="container">
-                <div class="row">
-                    <divs class="cols primaryColorText">
-                        <h4>Session 1</h4>
-                    </divs>
+    <x-session-overview-component title='AI' description='lul' date="11.11.1111" number-of-question='6'/>
 
-                    <div class="col">
-                        <h5>5</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <divs class="cols">
-                    <p>description</p>
-                </divs>
-
-                <div class="col">
-                    <p>16.01.2022</p>
-                </div>
-            </div>
-            <hr>
-        </a>
-    </div>
-
-    </div>
 </x-page>

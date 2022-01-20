@@ -1,6 +1,6 @@
 <div>
     <div id="presComponent">
-        <a style="text-decoration: none" href="login.html">
+        <a style="text-decoration: none" href="{{$UrlSessionOverview}}">
             <div class="container">
                 <div class="row">
                     <divs class="cols primaryColorText">
@@ -8,7 +8,7 @@
                     </divs>
 
                     <div class="col">
-                        <h5>{{ $numberOfQuestion }}</h5>
+                        <h5 style="color: #c7c7c7"> {{ $numberOfQuestion }}</h5>
                     </div>
                 </div>
             </div>
@@ -16,5 +16,4 @@
             <hr>
         </a>
     </div>
-
 </div>

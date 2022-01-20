@@ -8,7 +8,7 @@
     </div>
 
     <div class="row">
-        <divs class="cols">
+        <divs class="cols primaryColorText">
             <p>pres</p>
         </divs>
         <div class="col">
@@ -17,7 +17,7 @@
     </div>
 
    <div class="row">
-    <divs class="cols">
+    <divs class="cols primaryColorText">
         <p>11.11.1111</p>
     </divs>
     <div class="col">
@@ -27,25 +27,5 @@
 
     <hr>
     {{--TODO: add for each--}}
-    <div id="presComponent">
-        <a style="text-decoration: none" href="login.html">
-            <div class="container">
-                <div class="row">
-                    <divs class="cols primaryColorText">
-                        <h4>User</h4>
-                    </divs>
-
-                    <div class="col">
-                        <h5>23:30</h5>
-                    </div>
-                </div>
-            <p>i have a question</p>
-            </div>
-
-            </div>
-            <hr>
-        </a>
-    </div>
-
-    </div>
+    <x-session-info-component user='User' question='some cool question' timestamp="11:11"/>
 </x-page>

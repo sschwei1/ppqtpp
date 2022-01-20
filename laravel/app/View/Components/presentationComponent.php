@@ -10,17 +10,19 @@ class presentationComponent extends Component
     public $title;
     public $description;
     public $numberOfQuestion;
+    public $UrlSessionOverview;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct( $title = '',$description = '', $numberOfQuestion = '')
+    public function __construct( $title = '',$description = '', $numberOfQuestion = '', $UrlSessionOverview = '')
     {
         $this->title = $title;
         $this->description = $description;
         $this->numberOfQuestion = $numberOfQuestion;
+        $this->UrlSessionOverview = $UrlSessionOverview;
     }
 
     /**
