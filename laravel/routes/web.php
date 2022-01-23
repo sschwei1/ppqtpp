@@ -27,6 +27,14 @@ Route::get('/login', [UsersController::class, 'loginPage'])
 Route::post('/users/login', [UsersController::class, 'login'])
     ->name('user.login');
 
+// user logout via url
+Route::get('/logout', [UsersController::class, 'logout'])
+    ->name('view.user.logout');
+
+// user logout via request
+Route::post('/users/logout', [UsersController::class, 'logout'])
+    ->name('user.logout');
+
 
 /*
 |--------------------------------------------------------------------------
