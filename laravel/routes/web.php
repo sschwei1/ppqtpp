@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AskController;
+use App\Http\Controllers\PresentationController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsersController;
@@ -42,11 +43,11 @@ Route::post('/users/logout', [UsersController::class, 'logout'])
 |--------------------------------------------------------------------------
 */
 // overview of all presentations
-Route::view('/presentation/overview', 'presentation.overview')
+Route::get('/presentation/overview', [PresentationController::class, 'overview'])
     ->name('view.presentation.overview');
 
 //overview of all sessions of a presentation
-Route::view('/session/overview', 'session.overview')
+Route::view('/{id}/session/overview', 'session.overview')
     ->name('view.session.overview');
 
 //show the question of a session

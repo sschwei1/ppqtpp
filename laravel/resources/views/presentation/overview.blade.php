@@ -15,6 +15,11 @@
 
     <hr>
 {{--TODO: add for each--}}
-    <x-presentation-component title='AI' description='a presentation about ai' number-of-question='6'/>
-
+    @foreach($presentations as $presentation)
+    <x-presentation-component
+        :title='$presentation["theme"]'
+        :description='$presentation["description"]'
+        :number-of-question='$presentation["questionCnt"]'
+        :url='route("view.session.overview", ["id" => $presentation["id"]])'/>
+    @endforeach
 </x-page>
