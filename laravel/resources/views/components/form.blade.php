@@ -1,7 +1,7 @@
 <div>
     @if(isset($title))
     @endif
-    <form action='{{ route($action) }}' method='{{ $method }}'>
+    <form id="killMe" action='{{ route($action) }}' method='{{ $method }}'>
 
         <div class="spacer"></div>
         <div class="form-group">

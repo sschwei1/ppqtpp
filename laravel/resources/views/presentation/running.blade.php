@@ -17,7 +17,7 @@
     <hr>
 
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" data-wrap="false"  class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div style="margin-top: 20px;" class="container">
@@ -61,6 +61,5 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
 
 </x-page>
