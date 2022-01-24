@@ -1,31 +1,40 @@
 <x-page>
-    <x-header/>
-    <div class="row">
-        <divs class="cols primaryColorText">
-            <h2>Session 01</h2>
-        </divs>
+    <x-header :link='route("view.session.overview", $presentationId)' title='Session' />
 
-    </div>
+    <div class='container-fluid'>
+        <div class="row">
+            <divs class="cols primaryColorText">
+                <h2>{{ $name }}</h2>
+            </divs>
 
-    <div class="row">
+        </div>
+
+        <div class="row">
+            <divs class="cols primaryColorText">
+                <p>{{ $presentationName }}</p>
+            </divs>
+            <div class="col">
+                <p>{{ $questionCount }}</p>
+            </div>
+        </div>
+
+       <div class="row">
         <divs class="cols primaryColorText">
-            <p>pres</p>
+            <p>{{ explode(" ", $date)[0] }}</p>
         </divs>
         <div class="col">
-            <p>12</p>
+            <p>{{ $duration }}</p>
         </div>
-    </div>
+        </div>
 
-   <div class="row">
-    <divs class="cols primaryColorText">
-        <p>11.11.1111</p>
-    </divs>
-    <div class="col">
-        <p>11:40min</p>
-    </div>
-    </div>
+        <hr>
 
-    <hr>
-    {{--TODO: add for each--}}
-    <x-session-info-component user='User' question='some cool question' timestamp="11:11"/>
+        @foreach($questions as $question)
+            <x-session-info-component
+                :user='$question["username"]'
+                :question='$question["question"]'
+                :timestamp='substr(explode(" ", $question["timeStamp"])[1], 0, -3)'
+            />
+        @endforeach
+    </div>
 </x-page>

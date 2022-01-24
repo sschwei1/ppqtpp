@@ -1,9 +1,10 @@
 <x-page>
-    <x-header/>
+    <x-header :link="route('view.presentation.overview')" title="Presentation"/>
 
+    <div class='container-fluid'>
     <div style="margin-top: 20px" class="row">
         <divs class="cols primaryColorText">
-            <h2>Presentation</h2>
+            <h2>{{ $name }}</h2>
         </divs>
 
         <div  class="col">
@@ -12,23 +13,32 @@
     </div>
 
     <div class="row">
-    <divs class="cols primaryColorText">
-        <p>Thema</p>
-    </divs>
-    <div class="col ">
-        <p>12</p>
-    </div>
-    </div>
-
-    <div class="row">
-        <div class="cols fullWidthCol primaryColorText">
-            <p class="grayText">this is a presentation about things</p>
+        <divs class="cols primaryColorText">
+            <p>{{ $theme }}</p>
+        </divs>
+        <div class="col ">
+            <p>{{ $questionCount  }}</p>
         </div>
+        </div>
+
+        <div class="row">
+            <div class="cols fullWidthCol primaryColorText">
+                <p class="grayText">{{ $description }}</p>
+            </div>
+        </div>
+
+        <hr>
+    {{--TODO: add for each--}}
+        @foreach($finishedSessions as $session)
+            <x-session-overview-component
+                :title='$session["title"]'
+                :number-of-questions='$session["questionCount"]'
+                :date='explode(" ", $session["startTime"])[0]'
+                :duration='$session["duration"]'
+                :url='route("view.session.info", [
+                    "presentationId" => $id,
+                    "sessionId" => $session["id"]
+                    ])' />
+        @endforeach
     </div>
-
-
-    <hr>
-{{--TODO: add for each--}}
-    <x-session-overview-component title='AI' description='lul' date="11.11.1111" number-of-question='6'/>
-
 </x-page>

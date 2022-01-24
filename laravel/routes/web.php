@@ -39,7 +39,7 @@ Route::post('/users/logout', [UsersController::class, 'logout'])
 
 /*
 |--------------------------------------------------------------------------
-| Overview Routes
+| Presentation Routes
 |--------------------------------------------------------------------------
 */
 // overview of all presentations
@@ -47,16 +47,20 @@ Route::get('/presentation/overview', [PresentationController::class, 'overview']
     ->name('view.presentation.overview');
 
 //overview of all sessions of a presentation
-Route::view('/{id}/session/overview', 'session.overview')
+Route::get('/{id}/session/overview', [PresentationController::class, 'sessionOverview'])
     ->name('view.session.overview');
 
 //show the question of a session
-Route::view('/session/info/{id}', 'session.info')
+Route::get('/{presentationId}/session/info/{sessionId}', [PresentationController::class, 'sessionInfo'])
     ->name('view.session.info');
 
 //used to add a new presentation
-Route::view('/presentation/add', 'presentation.add')
+Route::get('/presentation/add', [PresentationController::class, 'presentationAddPage'])
     ->name('view.presentation.add');
+
+//used to add a new presentation
+Route::post('/presentation/add', [PresentationController::class, 'presentationAdd'])
+    ->name('presentation.add');
 
 //used while a presentation is running
 Route::view('/presentation/running', 'presentation.running')

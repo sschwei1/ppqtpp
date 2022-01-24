@@ -6,20 +6,19 @@ use Illuminate\View\Component;
 
 class SessionOverviewComponent extends Component
 {
-    public $id;
     public $title;
-    public $description;
     public $numberOfQuestions;
     public $date;
-    public $UrlSessionInfo;
+    public $duration;
+    public $url;
 
-    public function __construct($title = '',$description = '', $numberOfQuestions = '',  $date = '', $UrlSessionInfo = '')
+    public function __construct($title = '', $numberOfQuestions = '',  $date = '', $duration = '', $url = '')
     {
         $this->title = $title;
-        $this->description = $description;
         $this->numberOfQuestions = $numberOfQuestions;
         $this->date = $date;
-        $this->UrlSessionInfo = $UrlSessionInfo;
+        $this->duration = $duration;
+        $this->url = $url;
     }
 
     /**
@@ -29,6 +28,12 @@ class SessionOverviewComponent extends Component
      */
     public function render()
     {
-        return view('components.session-overview-component');
+        return view('components.session-overview-component', [
+            'title' => $this->title,
+            'questionCount' => $this->numberOfQuestions,
+            'date' => $this->date,
+            'duration' => $this->duration,
+            'url' => $this->url
+        ]);
     }
 }

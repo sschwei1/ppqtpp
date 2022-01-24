@@ -9,14 +9,16 @@ use Illuminate\Contracts\View\View;
 class Header extends Component
 {
     public string $link;
+    public string $title;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(string $link = "")
+    public function __construct(string $link = "", $title = "")
     {
         $this->link = $link;
+        $this->title = $title;
     }
 
     /**
@@ -25,6 +27,9 @@ class Header extends Component
      */
     public function render(): View|string|Closure
     {
-        return view('components.header');
+        return view('components.header', [
+            'link' => $this->link,
+            'title' => $this->title
+        ]);
     }
 }
