@@ -1,5 +1,5 @@
 <x-page>
-    <x-header link="http://127.0.0.1:8000/sessionOveriew" />
+    <x-header :link="route('view.session.overview', ['id' => 1])" />
 
     <div style="margin-top: 20px" class="container">
         <div class="row">
@@ -16,35 +16,51 @@
 
     <hr>
 
-    <div class="row">
-        <div style="width: 10%" class="cols">
 
-        </div>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div style="margin-top: 20px;" class="container">
+                        <div class="row">
+                            <divs class="cols primaryColorText">
+                                <h4>User</h4>
+                            </divs>
 
-
-        <div style="width: 80%" class="cols">
-        <div style="background-color: #585a61;   padding: 15px; margin-left: 20px; margin-right: 20px; height: 300px"
-             class="questionBox">
-
-            <div class="container">
-                <div class="row">
-                    <divs class="cols primaryColorText">
-                        <h4>User</h4>
-                    </divs>
-
-                    <div class="col ">
-                        <h5 style="color: white">timestamp</h5>
+                            <div class="col ">
+                                <h5 style="color: white">timestamp</h5>
+                            </div>
+                        </div>
+                        <p style="color: whitesmoke; margin: 10%">dsfjdaoäfojadhs oäsda fäfsda of osäda fäasädf oäadoäf adsoä fhäd äf äsodaf oähsdähofuda ähfäudf häsdäfhosäd ?</p>
                     </div>
                 </div>
-                <p style="color: whitesmoke">question</p>
+
+                {{--TODO: add For each --}}
+                <div class="carousel-item carousel">
+                    <div class="container">
+                        <div class="row">
+                            <divs class="cols primaryColorText">
+                                <h4>Use2dsfsdfr</h4>
+                            </divs>
+
+                            <div class="col ">
+                                <h5 style="color: white">timestamp</h5>
+                            </div>
+                        </div>
+                        <p style="color: whitesmoke; margin: 10%">i have a long and annoying question that i like to be answerd also i hate people</p>
+                    </div>
+                </div>
+
+
             </div>
-
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-    </div>
 
-    <div style="width: 10%" class="cols">
-        <a style="margin-left: 0px; margin-top: 50%" href=""> <i style="margin-left: 0px; padding-top: 100px" class="navicon fa fa-chevron-right" aria-hidden="true"></i></a>
-    </div>
-    </div>
 
 </x-page>

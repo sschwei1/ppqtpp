@@ -62,7 +62,7 @@ button#submit:focus {
 
 
     width: 20%;
-    margin-left: 42.5%;
+    margin-left: 40%;
     margin-top: 2%;
     font-size: 35px;
     font-weight: bold;
@@ -170,4 +170,9 @@ h5{
 .grayText{
 
     color: var(--placeholder);
+}
+.carousel{
+
+    background-color: var(--lightGray);
+    margin: 10px;
 }
