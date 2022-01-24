@@ -114,3 +114,10 @@ button#submit:focus{
 
     margin-top: 7%;
 }
+
+.questionBox{
+
+    background-color: #585a61;
+    padding: 50px;
+
+}
