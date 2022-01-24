@@ -9,12 +9,11 @@
                 name='{{$id}}'
                 type='{{$type}}'
                 placeholder='{{$placeholder}}'
-                value='{{$value}}'
+                value='{{old($id, $value)}}'
                 class='{{$class}}'
 
             />
         @endif
-        <br />
         <span style='color:red'>@error($id){{$message}}@enderror</span>
         <br />
 @else

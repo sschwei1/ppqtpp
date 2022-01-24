@@ -1,6 +1,6 @@
 <div>
     <div id="presComponent">
-        <a style="text-decoration: none" href="{{$UrlSessionInfo}}">
+        <a style="text-decoration: none" href="{{$url}}">
             <div class="container">
                 <div class="row">
                         <div class="col primaryColorText">
@@ -14,16 +14,15 @@
             </div>
             <div class="row">
                 <divs class="col primaryColorText">
-                    <p>{{$description}}</p>
+                    <p>{{$date}}</p>
                 </divs>
 
                 <div class="col">
-                    <p>{{$date}}</p>
+                    <p>{{$duration}}</p>
                 </div>
             </div>
             <hr>
         </a>
     </div>
 
-</div>
 </div>

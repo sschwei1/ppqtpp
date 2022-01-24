@@ -5,12 +5,10 @@
 
         <div class="spacer"></div>
         <div class="form-group">
+            @csrf
+            {{$slot}}
 
-        @csrf
-        {{$slot}}
+            <button style='width: 50%; margin: 15px auto; display: block' class="btn btn-primary" type='submit'>{{ $submit }}</button>
         </div>
-
-            <button  class="btn btn-primary" type='submit'>{{ $submit }}</button>
-
     </form>
 </div>

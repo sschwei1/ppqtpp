@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AskController;
+use App\Http\Controllers\PresentationController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsersController;
@@ -13,45 +14,57 @@ use App\Http\Controllers\UsersController;
 // php info file
 Route::view('/phpinfo', 'phpinfo');
 
+
 /*
 |--------------------------------------------------------------------------
 | User Routes
 |--------------------------------------------------------------------------
 */
 // user login page
-Route::view('/login', 'users.login')
+Route::get('/login', [UsersController::class, 'loginPage'])
     ->name('view.user.login');
 
 // user login controller
 Route::post('/users/login', [UsersController::class, 'login'])
     ->name('user.login');
 
+// user logout via url
+Route::get('/logout', [UsersController::class, 'logout'])
+    ->name('view.user.logout');
+
+// user logout via request
+Route::post('/users/logout', [UsersController::class, 'logout'])
+    ->name('user.logout');
 
 
 /*
 |--------------------------------------------------------------------------
-| Overview Routes
+| Presentation Routes
 |--------------------------------------------------------------------------
 */
 // overview of all presentations
-Route::view('/presOverview', 'overview.presentationOverview')
-    ->name('view.overview.presentationOverview');
+Route::get('/presentation/overview', [PresentationController::class, 'overview'])
+    ->name('view.presentation.overview');
 
 //overview of all sessions of a presentation
-Route::view('/sessionOverview', 'overview.sessionOverview')
-    ->name('view.overview.sessionOverview');
+Route::get('/{id}/session/overview', [PresentationController::class, 'sessionOverview'])
+    ->name('view.session.overview');
 
 //show the question of a session
-Route::view('/sessionInfo', 'overview.sessionInfo')
-    ->name('view.overview.sessionInfo');
+Route::get('/{presentationId}/session/info/{sessionId}', [PresentationController::class, 'sessionInfo'])
+    ->name('view.session.info');
 
 //used to add a new presentation
-Route::view('/newPresentation', 'overview.addNewPresentation')
-    ->name('view.overview.addNewPresentation');
+Route::get('/presentation/add', [PresentationController::class, 'presentationAddPage'])
+    ->name('view.presentation.add');
+
+//used to add a new presentation
+Route::post('/presentation/add', [PresentationController::class, 'presentationAdd'])
+    ->name('presentation.add');
 
 //used while a presentation is running
-Route::view('/runningPresentation', 'overview.runningPres')
-    ->name('view.overview.runningPres');
+Route::view('/presentation/running', 'presentation.running')
+    ->name('view.presentation.running');
 
 
 /*
@@ -75,3 +88,11 @@ Route::get('/ask/{id}', [AskController::class, 'load'])
 Route::post('/ask/question', [AskController::class, 'question'])
     ->name('ask.question');
 
+
+/*
+|--------------------------------------------------------------------------
+| Redirects
+|--------------------------------------------------------------------------
+*/
+// redirect to ask page if route is empty
+Route::redirect('/', '/ask');

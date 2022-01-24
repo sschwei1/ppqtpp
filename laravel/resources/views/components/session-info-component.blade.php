@@ -1,6 +1,6 @@
 <div>
     <div id="presComponent">
-        <a style="text-decoration: none" href="{{$UrlSessionInfo}}">
+        <a style="text-decoration: none" href="{{$UrlSessionInfo ?? ''}}">
             <div class="container">
                 <div class="row">
                     <divs class="cols primaryColorText">
