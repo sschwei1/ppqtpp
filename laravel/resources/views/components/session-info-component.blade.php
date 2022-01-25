@@ -1,6 +1,6 @@
 <div>
     <div id="presComponent">
-        <a style="text-decoration: none" href="{{$UrlSessionInfo ?? ''}}">
+        <div style="text-decoration: none">
             <div class="container">
                 <div class="row">
                     <divs class="cols primaryColorText">
@@ -11,8 +11,9 @@
                         <h5 style="color: white">{{$timestamp}}</h5>
                     </div>
                 </div>
-                <p>{{$question}}</div>
-        </a>
+                <p>{{$question}}
+            </div>
+        </div>
     </div>
     <hr>
 </div>

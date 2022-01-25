@@ -7,8 +7,8 @@
             <h2>{{ $name }}</h2>
         </divs>
 
-        <div  class="col">
-            <button type="button" id="add" class="btn btn-primary menuButton">add New</button>
+        <div class="col">
+            <button type="button" id="add" class="btn btn-primary menuButton" style='width: unset; margin: 0 20px 0 0;'>add session</button>
         </div>
     </div>
 
@@ -26,6 +26,10 @@
                 <p class="grayText">{{ $description }}</p>
             </div>
         </div>
+
+        <hr />
+
+        <h4 class='cols primaryColorText'>Session List</h4>
 
         <hr>
     {{--TODO: add for each--}}

@@ -27,8 +27,11 @@
         </div>
         </div>
 
-        <hr>
+        <hr />
 
+        <h4 class='cols primaryColorText'>Question List</h4>
+
+        <hr>
         @foreach($questions as $question)
             <x-session-info-component
                 :user='$question["username"]'

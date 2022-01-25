@@ -8,7 +8,8 @@
             </div>
 
             <div class="col">
-                <a style='color: black;' href='{{ route('view.presentation.add') }}' id="add" class="btn btn-primary menuButton">add New</a>
+                <h4 class='primaryColorText' style='display: inline-block;'>Presentation List</h4>
+                <a style='color: black;margin: auto 20px auto auto;' href='{{ route('view.presentation.add') }}' id="add" class="btn btn-primary menuButton">add New</a>
             </div>
         </div>
     </div>
