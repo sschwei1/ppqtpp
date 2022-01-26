@@ -1,20 +1,20 @@
 <x-page>
 
-    <x-header></x-header>
+    <x-header :title="$presentationTitle" :link="route('view.ask.join')" />
 
     <x-form title='Ask your question' action='ask.question' submit='Ask' method='post' >
-        <x-form-input id='presentationId' value='{{$id}}' hidden />
+        <x-form-input id='presentationId' value='{{$id}}' :hidden="true" />
+        <x-form-input id='sessionId' value='{{$sessionId}}' :hidden="true" />
+        <x-form-input id='title' value='{{$presentationTitle}}' :hidden="true" />
         <x-form-input id='username' title='Username' class='form-control' labelClass='textLabelSmaller'/>
         <x-form-input id='question' title='Question' class='form-control' labelClass='textLabelSmaller' />
     </x-form>
 
-    <div class="alert alert-success alert-dismissible fade show fade-in" id="successAlert" role="alert">
-        The Question was sucessfully submited
-
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+    @if($successMessage)
+        <div class="alert alert-success">
+            The Question was sucessfully submited
+        </div>
+    @endif
 
 </x-page>
 

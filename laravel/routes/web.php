@@ -59,11 +59,23 @@ Route::get('/presentation/add', [PresentationController::class, 'presentationAdd
     ->name('view.presentation.add');
 
 //used to add a new presentation
-Route::post('/presentation/add', [PresentationController::class, 'presentationAdd'])
+Route::post('/add/presentation', [PresentationController::class, 'presentationAdd'])
     ->name('presentation.add');
 
+//used to add a new session
+Route::get('/{id}/add/session', [PresentationController::class, 'sessionAddPage'])
+    ->name('view.session.add');
+
+//used to add a new session
+Route::post('/add/session', [PresentationController::class, 'sessionAdd'])
+    ->name('session.add');
+
+//used to close a new session
+Route::get('/end/session/{id}', [PresentationController::class, 'sessionClose'])
+    ->name('session.end');
+
 //used while a presentation is running
-Route::view('/presentation/running', 'presentation.running')
+Route::get('/presentation/{id}/running', [PresentationController::class, 'runningSession'])
     ->name('view.presentation.running');
 
 
@@ -81,7 +93,7 @@ Route::post('/ask/join', [AskController::class, 'join'])
     ->name('ask.join');
 
 // get route which renders question page with necessary parameters
-Route::get('/ask/{id}', [AskController::class, 'load'])
+Route::get('/ask/{id}/{success}', [AskController::class, 'load'])
     ->name('view.ask.question');
 
 // handles asked question

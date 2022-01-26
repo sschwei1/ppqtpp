@@ -8,7 +8,7 @@
         </divs>
 
         <div class="col">
-            <button type="button" id="add" class="btn btn-primary menuButton" style='width: unset; margin: 0 20px 0 0;'>add session</button>
+            <a id="add" class="btn btn-primary menuButton" style='width: unset; margin: 0 20px 0 0;' href='{{route('view.session.add', ['id' => $id])}}'>add session</a>
         </div>
     </div>
 

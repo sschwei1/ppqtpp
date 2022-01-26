@@ -1,5 +1,5 @@
 <x-page>
-    <x-header :link="route('view.session.overview', ['id' => 1])" />
+    <x-header :link="route('view.session.overview', ['id' => $presentationId])" />
 
     <div style="margin-top: 20px" class="container">
         <div class="row">
@@ -9,7 +9,8 @@
             </div>
 
             <div class="col">
-                <button type="button" id="start" class="btn btn-primary menuButton">Start</button>
+                <a type="button" id="start" class="btn btn-primary menuButton" href=''>Refresh</a>
+                <a type="button" id="start" class="btn btn-primary menuButton" href='{{route('session.end', ['id' => $presentationId])}}'>End</a>
             </div>
         </div>
     </div>
@@ -17,38 +18,41 @@
     <hr>
 
 
+    @if(count($questions) > 0)
         <div id="carouselExampleControls" data-wrap="false"  class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div style="margin-top: 20px;" class="container">
-                        <div class="row">
-                            <divs class="cols primaryColorText">
-                                <h4>User</h4>
-                            </divs>
+{{--                <div class="carousel-item active">--}}
+{{--                    <div style="margin-top: 20px;" class="container">--}}
+{{--                        <div class="row">--}}
+{{--                            <divs class="cols primaryColorText">--}}
+{{--                                <h4>User</h4>--}}
+{{--                            </divs>--}}
 
-                            <div class="col ">
-                                <h5 style="color: white">timestamp</h5>
-                            </div>
-                        </div>
-                        <p style="color: whitesmoke; margin: 10%">dsfjdaoäfojadhs oäsda fäfsda of osäda fäasädf oäadoäf adsoä fhäd äf äsodaf oähsdähofuda ähfäudf häsdäfhosäd ?</p>
-                    </div>
-                </div>
+{{--                            <div class="col ">--}}
+{{--                                <h5 style="color: white">timestamp</h5>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <p style="color: whitesmoke; margin: 10%">dsfjdaoäfojadhs oäsda fäfsda of osäda fäasädf oäadoäf adsoä fhäd äf äsodaf oähsdähofuda ähfäudf häsdäfhosäd ?</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 {{--TODO: add For each --}}
-                <div class="carousel-item carousel">
-                    <div class="container">
-                        <div class="row">
-                            <divs class="cols primaryColorText">
-                                <h4>Use2dsfsdfr</h4>
-                            </divs>
+                @foreach($questions->toArray() as $key => $question)
+                    <div class="carousel-item carousel {{$key == 0 ? 'active' : ''}}">
+                        <div class="container">
+                            <div class="row">
+                                <divs class="cols primaryColorText">
+                                    <h4>{{$question['username']}}</h4>
+                                </divs>
 
-                            <div class="col ">
-                                <h5 style="color: white">timestamp</h5>
+                                <div class="col ">
+                                    <h5 style="color: white">{{$question['timeStamp']}}</h5>
+                                </div>
                             </div>
+                            <p style="color: whitesmoke; margin: 10%">{{$question['question']}}</p>
                         </div>
-                        <p style="color: whitesmoke; margin: 10%">i have a long and annoying question that i like to be answerd also i hate people</p>
                     </div>
-                </div>
+                @endforeach
 
 
             </div>
@@ -61,5 +65,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+    @endif
 
 </x-page>
