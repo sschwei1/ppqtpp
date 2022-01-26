@@ -29,7 +29,7 @@
 
         <hr />
 
-        <h4 class='cols primaryColorText'>Session List</h4>
+        <h4 style="color: whitesmoke" class='cols primaryColorText'>Session List</h4>
 
         <hr>
     {{--TODO: add for each--}}

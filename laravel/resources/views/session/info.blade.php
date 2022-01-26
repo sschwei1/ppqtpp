@@ -29,7 +29,7 @@
 
         <hr />
 
-        <h4 class='cols primaryColorText'>Question List</h4>
+        <h4 style="color: whitesmoke" class='cols primaryColorText'>Question List</h4>
 
         <hr>
         @foreach($questions as $question)
